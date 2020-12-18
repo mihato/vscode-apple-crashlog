@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "",
+	"patterns": [
+		{ "include": "#section" }, 
+		{ "include": "#strings" },
+		{ "include": "#numbers" },
+		{ "include": "#uuid" },
+		{ "include": "#component" },
+		{ "include": "#comment" },
+		{ "include": "#path" },
+		{ "include": "#unknown" },
+		{ "include": "#crashed" }
+	],
+	"repository": {
+		"section": {
+			"patterns": [{
+				"name": "keyword.control.txt",
+				"match": "^[A-Z][A-z /]+\\:"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.txt",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.txt",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [{
+				"name": "constant.language",
+				"match": "\\b(0x[0-9A-Fa-f]+|\\-?[0-9]+)\\b"
+			}]
+		},
+		"uuid": {
+			"patterns": [{
+				"name": "uuid",
+				"match": "\\b([A-Z0-9]{8}\\-[A-Z0-9]{4}\\-[A-Z0-9]{4}\\-[A-Z0-9]{4}\\-[A-Z0-9]{12}|[A-Z0-9]{8})\\b"
+			}]
+		},
+		"component": {
+			"patterns": [{
+				"name": "variable.language",
+				"match": "\\b[A-z0-9\\-\\+]+(\\.[A-z0-9\\-\\+]+)+\\b"
+			}]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment",
+				"match": "(//).*"
+			}]
+		},
+		"path": {
+			"patterns": [{
+				"name": "string",
+				"match": "/[A-z \\*\\./0-9\\+]+"
+			}]
+		},
+		"unknown": {
+			"patterns": [{
+				"name": "comment",
+				"match": "\\?+"
+			}]
+		},
+		"crashed": {
+			"patterns": [{
+				"name": "token.error-token",
+				"match": "\\b[C|c]rashed\\b"
+			}]
+		}
+	},
+	"scopeName": "source.crash"
+}

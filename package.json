@@ -1,0 +1,26 @@
+{
+    "name": "apple-crashlog",
+    "displayName": "Apple Crashlog",
+    "description": "This extension provides basic highligthing for crashlogs in OSX operation system.",
+    "publisher": "MykhailoGrebonkin",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "crash",
+            "aliases": ["crash", "apple crash", "crashlog", "diag"],
+            "extensions": [".crash", ".diag"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "crash",
+            "scopeName": "source.crash",
+            "path": "./syntaxes/crash.tmLanguage.json"
+        }]
+    }
+}
