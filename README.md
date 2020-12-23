@@ -14,7 +14,7 @@ Extension highlights:
 
 ![Example 1](images/demo1.png)
 
-![Screenshots 2](images/demo2.png)
+![Example 2](images/demo2.png)
 
 ## License
 

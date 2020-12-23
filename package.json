@@ -3,7 +3,7 @@
     "displayName": "Apple Crashlog",
     "description": "This extension provides basic highligthing for crashlogs in OSX operation system.",
     "publisher": "MykhailoGrebonkin",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.51.0"
     },
